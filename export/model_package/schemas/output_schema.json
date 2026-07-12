@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "De-NATRM package output",
+  "type": "object",
+  "required": [
+    "model_id",
+    "probabilities",
+    "recommended_treatment",
+    "recommended_probability",
+    "selected_threshold",
+    "threshold_strategy"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "probabilities": {
+      "type": "object",
+      "properties": {
+        "Standard": {
+          "type": "number"
+        },
+        "De-escalation": {
+          "type": "number"
+        }
+      }
+    },
+    "recommended_treatment": {
+      "type": "string",
+      "enum": [
+        "Standard",
+        "De-escalation"
+      ]
+    },
+    "recommended_probability": {
+      "type": "number"
+    },
+    "selected_threshold": {
+      "type": "number"
+    },
+    "threshold_strategy": {
+      "type": "string"
+    },
+    "positive_at_threshold": {
+      "type": "object"
+    },
+    "missing_input_features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

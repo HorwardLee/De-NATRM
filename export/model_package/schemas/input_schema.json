@@ -1,0 +1,444 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "De-NATRM package input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "Age": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Height": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Weight": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "BMI": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "CA199": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "CA125": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "AFP": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "CEA": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "HCG-B": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "LH": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "FSH": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "PRL": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "E2": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "HER2(s)": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Weight Standard (4)": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Affected Breast": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "PT Location": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "ER status": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "PR status": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "cT": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "cN": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Stage": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Size": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Histological Grade": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "ER": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "HR": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "HER2": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "Ki-67": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "AR": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "CD8": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "FOXC1": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "mr_roi_available": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_roi_available": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_ambiguous_series": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_multifocal_any": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "mr_lesion_count": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_lesion_count": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "mr_total_roi_volume_ml": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "mr_bbox_max_dim_mm": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "mr_z_span_mm": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "mr_max_slice_area_mm2": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_total_roi_volume_ml": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_bbox_max_dim_mm": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_z_span_mm": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_max_slice_area_mm2": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_suvbw_mean": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_suvbw_max": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_tlg": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "log_pet_mr_volume_ratio": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_rad_original_shape_elongation": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_rad_original_shape_leastaxislength": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_rad_original_shape_maximum2ddiameterrow": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_rad_original_shape_maximum2ddiameterslice": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_rad_original_shape_minoraxislength": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "pet_rad_original_shape_surfacevolumeratio": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_comp_pet_metabolic_density": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_comp_pet_suvmax_to_mr_dim": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_comp_pet_mr_volume_ratio_raw": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_comp_pet_mr_zspan_ratio": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_comp_pet_mr_maxarea_ratio": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_comp_pet_mr_lesion_delta": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "roi_comp_pet_suvmean_to_mr_vol": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [],
+  "description": "One patient object. Missing numeric features are allowed and imputed by the saved training preprocessor; ROI validity flags control ROI branch gating."
+}

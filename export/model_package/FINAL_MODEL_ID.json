@@ -1,0 +1,29 @@
+{
+  "model_id": "de_natrm_final_release_pr90_20260423",
+  "human_readable_name": "De-NATRM final release model (causal + 18 primary ROI + 7 composite ROI + 6 PET shape ROI)",
+  "source_release_lineage": "de_natrm_release_candidate_pr90_export",
+  "source_experiment_timestamp": "2026-04-23 22:58:58",
+  "source_code_snapshot": "research_snapshot_20260316",
+  "release_selection_note": "This is the final De-NATRM export target selected for the public repository and manuscript-linked release. It uses a precision-recall-targeted threshold configuration with target recall 0.90.",
+  "roi_summary": {
+    "causal": true,
+    "primary_roi_count": 18,
+    "composite_roi_count": 7,
+    "pet_shape_roi_count": 6
+  },
+  "threshold_strategy": "precision_at_recall",
+  "selected_threshold": 0.4630236625671386,
+  "metrics": {
+    "auroc": 0.8693,
+    "auprc": 0.9076,
+    "brier": 0.1946,
+    "precision": 0.8649,
+    "recall": 0.9412
+  },
+  "treatment_labels": [
+    "Standard",
+    "De-escalation"
+  ],
+  "direct_regimen_labels_supported": false,
+  "regimen_label_note": "The frozen model predicts abstract NAT scheme classes Standard and De-escalation. It does not directly output concrete regimen labels such as TCbHP, THP, or HP."
+}

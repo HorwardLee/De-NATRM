@@ -1,0 +1,134 @@
+{
+  "package_dir": "export/model_package",
+  "checks": {
+    "model_id_ok": true,
+    "threshold_ok": true,
+    "num_feature_count_ok": true,
+    "roi_branch_dim_ok": true,
+    "treatments_ok": true,
+    "hashes_ok": true,
+    "all_ok": true
+  },
+  "hash_results": {
+    "artifacts/causal_net.pt": {
+      "expected": "59c0b5550b5cadd6ead30c94376f91f9a9be56b01e6d418730e1b6e8a895ea15",
+      "actual": "59c0b5550b5cadd6ead30c94376f91f9a9be56b01e6d418730e1b6e8a895ea15",
+      "ok": true
+    },
+    "artifacts/preprocessor.joblib": {
+      "expected": "84c5070e4925f5c1ba69972a3b01826e2b324e1280100cfa3bf3fc04bc8e8114",
+      "actual": "84c5070e4925f5c1ba69972a3b01826e2b324e1280100cfa3bf3fc04bc8e8114",
+      "ok": true
+    },
+    "artifacts/data_meta.json": {
+      "expected": "bcf5abf952530eef9aaf76ce206e5f022caed5c839ad2b78cd4501d6b4ce0256",
+      "actual": "bcf5abf952530eef9aaf76ce206e5f022caed5c839ad2b78cd4501d6b4ce0256",
+      "ok": true
+    },
+    "artifacts/treatment_map.json": {
+      "expected": "bd847ecd0c24821abc71084a4578bf1f3f16f373e6d9f92694013b611f7e9877",
+      "actual": "bd847ecd0c24821abc71084a4578bf1f3f16f373e6d9f92694013b611f7e9877",
+      "ok": true
+    },
+    "artifacts/treatments_keep.json": {
+      "expected": "85923b8dae50490fdc8ff3035a26351414bc77a114b12c179b60e8455dde09d3",
+      "actual": "85923b8dae50490fdc8ff3035a26351414bc77a114b12c179b60e8455dde09d3",
+      "ok": true
+    },
+    "artifacts/test_metrics.txt": {
+      "expected": "75450519a392d076a28a75135eed779ea02d797586032e99bcad75ab3341eb82",
+      "actual": "75450519a392d076a28a75135eed779ea02d797586032e99bcad75ab3341eb82",
+      "ok": true
+    },
+    "artifacts/test_per_treatment_precision_recall.csv": {
+      "expected": "ea9199ca43e1e24bab8cfb34b94aa39e98e2fd710124f2620237e00bd541a860",
+      "actual": "ea9199ca43e1e24bab8cfb34b94aa39e98e2fd710124f2620237e00bd541a860",
+      "ok": true
+    },
+    "artifacts/experiment_results_summary.csv": {
+      "expected": "71edd02d39d5278aa95f94c5d261908132712a1f3a88c4ba2a829fd115a7d60b",
+      "actual": "71edd02d39d5278aa95f94c5d261908132712a1f3a88c4ba2a829fd115a7d60b",
+      "ok": true
+    },
+    "artifacts/test_per_treatment_probs_detailed.csv": {
+      "expected": "5179008382704f58923a33158373914e19c348411c2f94173e03f68cf9b584ca",
+      "actual": "5179008382704f58923a33158373914e19c348411c2f94173e03f68cf9b584ca",
+      "ok": true
+    }
+  },
+  "smoke_prediction": {
+    "model_id": "de_natrm_final_release_pr90_20260423",
+    "probabilities": {
+      "Standard": 0.0,
+      "De-escalation": 0.0
+    },
+    "recommended_treatment": "Standard",
+    "recommended_probability": 0.0,
+    "selected_threshold": 0.4630236625671386,
+    "threshold_strategy": "precision_at_recall",
+    "positive_at_threshold": {
+      "Standard": false,
+      "De-escalation": false
+    },
+    "missing_input_features": [
+      "CA199",
+      "CA125",
+      "AFP",
+      "CEA",
+      "HCG-B",
+      "LH",
+      "FSH",
+      "PRL",
+      "E2",
+      "HER2(s)",
+      "Weight Standard (4)",
+      "Affected Breast",
+      "PT Location",
+      "ER status",
+      "PR status",
+      "cT",
+      "cN",
+      "Stage",
+      "Size",
+      "Histological Grade",
+      "ER",
+      "HR",
+      "HER2",
+      "Ki-67",
+      "AR",
+      "CD8",
+      "FOXC1",
+      "roi_multifocal_any",
+      "mr_lesion_count",
+      "pet_lesion_count",
+      "mr_total_roi_volume_ml",
+      "mr_bbox_max_dim_mm",
+      "mr_z_span_mm",
+      "mr_max_slice_area_mm2",
+      "pet_total_roi_volume_ml",
+      "pet_bbox_max_dim_mm",
+      "pet_z_span_mm",
+      "pet_max_slice_area_mm2",
+      "pet_suvbw_mean",
+      "pet_suvbw_max",
+      "pet_tlg",
+      "log_pet_mr_volume_ratio",
+      "pet_rad_original_shape_elongation",
+      "pet_rad_original_shape_leastaxislength",
+      "pet_rad_original_shape_maximum2ddiameterrow",
+      "pet_rad_original_shape_maximum2ddiameterslice",
+      "pet_rad_original_shape_minoraxislength",
+      "pet_rad_original_shape_surfacevolumeratio",
+      "roi_comp_pet_metabolic_density",
+      "roi_comp_pet_suvmax_to_mr_dim",
+      "roi_comp_pet_mr_volume_ratio_raw",
+      "roi_comp_pet_mr_zspan_ratio",
+      "roi_comp_pet_mr_maxarea_ratio",
+      "roi_comp_pet_mr_lesion_delta",
+      "roi_comp_pet_suvmean_to_mr_vol"
+    ],
+    "warnings": [
+      "ROI branch gated to zero because mr_roi_available/pet_roi_available/roi_ambiguous_series do not indicate a valid paired ROI."
+    ]
+  }
+}

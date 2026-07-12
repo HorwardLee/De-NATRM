@@ -1,0 +1,62 @@
+# macOS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Logs
+*.log
+.last_run.log
+.last_run_calibrated.log
+
+# Large raw datasets / medical images
+ROI/
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.mhd
+*.voi
+*.rar
+
+# Tabular source data and ad hoc exports
+*.xlsx
+*.xls
+
+# Large derived features / model artifacts
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+
+# Protected or user-supplied local assets
+data/
+data_splits/
+derived_assets/
+
+# Local outputs
+outputs/
+
+# Shell artifacts
+training_output.log

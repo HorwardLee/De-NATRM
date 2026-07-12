@@ -1,0 +1,10 @@
+{
+  "keep_order": [
+    "Standard",
+    "De-escalation"
+  ],
+  "map": {
+    "Standard": 0,
+    "De-escalation": 1
+  }
+}

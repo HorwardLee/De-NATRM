@@ -1,0 +1,22 @@
+{
+  "outcome": {
+    "column": "tpCR",
+    "positive_label": 1,
+    "negative_label": 0,
+    "meaning": "tpCR/pCR binary outcome used by old model"
+  },
+  "treatment": {
+    "keep_order": [
+      "Standard",
+      "De-escalation"
+    ],
+    "map": {
+      "Standard": 0,
+      "De-escalation": 1
+    }
+  },
+  "prediction_heads": {
+    "0": "Standard",
+    "1": "De-escalation"
+  }
+}

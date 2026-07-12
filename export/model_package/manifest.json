@@ -1,0 +1,192 @@
+{
+  "package_name": "de_natrm_model_package",
+  "model_id": "de_natrm_final_release_pr90_20260423",
+  "created_on": "2026-07-02",
+  "purpose": "Freeze the final De-NATRM paper model assets for reproducible inference and later deployment packaging.",
+  "source_release_lineage": "de_natrm_release_candidate_pr90_export",
+  "release_selection": "final_release_pr90_export",
+  "model": {
+    "type": "CausalNet multi-head potential-outcome pCR model",
+    "framework": "PyTorch",
+    "architecture": {
+      "input_dim": 62,
+      "num_features": 62,
+      "cat_features": 0,
+      "num_treatments": 2,
+      "rep_dim": 32,
+      "enc_hidden": [
+        64,
+        32
+      ],
+      "head_hidden": [
+        8
+      ],
+      "dropout": 0.43,
+      "batch_norm": true,
+      "roi_branch_enabled": true,
+      "roi_branch_feature_dim": 31,
+      "roi_nonbranch_num_feature_dim": 31,
+      "branch_mode": "clinical+roi"
+    }
+  },
+  "preprocessing": {
+    "object": "sklearn ColumnTransformer saved as artifacts/preprocessor.joblib",
+    "numeric_pipeline": [
+      "SimpleImputer(strategy=median)",
+      "StandardScaler"
+    ],
+    "categorical_pipeline": [],
+    "roi_branch_missing_policy": "gate",
+    "roi_gate_rule": "If mr_roi_available != 1 or pet_roi_available != 1 or roi_ambiguous_series != 0, zero the ROI branch encoded features."
+  },
+  "threshold": {
+    "strategy": "precision_at_recall",
+    "target_recall": 0.9,
+    "selected_threshold": 0.4630236625671386
+  },
+  "metrics": {
+    "auroc": 0.8693,
+    "auprc": 0.9076,
+    "brier": 0.1946,
+    "precision": 0.8649,
+    "recall": 0.9412
+  },
+  "artifact_hashes_sha256": {
+    "artifacts/causal_net.pt": "59c0b5550b5cadd6ead30c94376f91f9a9be56b01e6d418730e1b6e8a895ea15",
+    "artifacts/preprocessor.joblib": "84c5070e4925f5c1ba69972a3b01826e2b324e1280100cfa3bf3fc04bc8e8114",
+    "artifacts/data_meta.json": "bcf5abf952530eef9aaf76ce206e5f022caed5c839ad2b78cd4501d6b4ce0256",
+    "artifacts/treatment_map.json": "bd847ecd0c24821abc71084a4578bf1f3f16f373e6d9f92694013b611f7e9877",
+    "artifacts/treatments_keep.json": "85923b8dae50490fdc8ff3035a26351414bc77a114b12c179b60e8455dde09d3",
+    "artifacts/test_metrics.txt": "75450519a392d076a28a75135eed779ea02d797586032e99bcad75ab3341eb82",
+    "artifacts/test_per_treatment_precision_recall.csv": "ea9199ca43e1e24bab8cfb34b94aa39e98e2fd710124f2620237e00bd541a860",
+    "artifacts/experiment_results_summary.csv": "71edd02d39d5278aa95f94c5d261908132712a1f3a88c4ba2a829fd115a7d60b",
+    "artifacts/test_per_treatment_probs_detailed.csv": "5179008382704f58923a33158373914e19c348411c2f94173e03f68cf9b584ca"
+  },
+  "entrypoints": {
+    "predict_one": "scripts/predict_package.py",
+    "validate": "scripts/validate_package.py"
+  },
+  "feature_schema": {
+    "num_features": [
+      "Age",
+      "Height",
+      "Weight",
+      "BMI",
+      "CA199",
+      "CA125",
+      "AFP",
+      "CEA",
+      "HCG-B",
+      "LH",
+      "FSH",
+      "PRL",
+      "E2",
+      "HER2(s)",
+      "Weight Standard (4)",
+      "Affected Breast",
+      "PT Location",
+      "ER status",
+      "PR status",
+      "cT",
+      "cN",
+      "Stage",
+      "Size",
+      "Histological Grade",
+      "ER",
+      "HR",
+      "HER2",
+      "Ki-67",
+      "AR",
+      "CD8",
+      "FOXC1",
+      "mr_roi_available",
+      "pet_roi_available",
+      "roi_ambiguous_series",
+      "roi_multifocal_any",
+      "mr_lesion_count",
+      "pet_lesion_count",
+      "mr_total_roi_volume_ml",
+      "mr_bbox_max_dim_mm",
+      "mr_z_span_mm",
+      "mr_max_slice_area_mm2",
+      "pet_total_roi_volume_ml",
+      "pet_bbox_max_dim_mm",
+      "pet_z_span_mm",
+      "pet_max_slice_area_mm2",
+      "pet_suvbw_mean",
+      "pet_suvbw_max",
+      "pet_tlg",
+      "log_pet_mr_volume_ratio",
+      "pet_rad_original_shape_elongation",
+      "pet_rad_original_shape_leastaxislength",
+      "pet_rad_original_shape_maximum2ddiameterrow",
+      "pet_rad_original_shape_maximum2ddiameterslice",
+      "pet_rad_original_shape_minoraxislength",
+      "pet_rad_original_shape_surfacevolumeratio",
+      "roi_comp_pet_metabolic_density",
+      "roi_comp_pet_suvmax_to_mr_dim",
+      "roi_comp_pet_mr_volume_ratio_raw",
+      "roi_comp_pet_mr_zspan_ratio",
+      "roi_comp_pet_mr_maxarea_ratio",
+      "roi_comp_pet_mr_lesion_delta",
+      "roi_comp_pet_suvmean_to_mr_vol"
+    ],
+    "cat_features": [],
+    "roi_feature_names": [
+      "mr_roi_available",
+      "pet_roi_available",
+      "roi_ambiguous_series",
+      "roi_multifocal_any",
+      "mr_lesion_count",
+      "pet_lesion_count",
+      "mr_total_roi_volume_ml",
+      "mr_bbox_max_dim_mm",
+      "mr_z_span_mm",
+      "mr_max_slice_area_mm2",
+      "pet_total_roi_volume_ml",
+      "pet_bbox_max_dim_mm",
+      "pet_z_span_mm",
+      "pet_max_slice_area_mm2",
+      "pet_suvbw_mean",
+      "pet_suvbw_max",
+      "pet_tlg",
+      "log_pet_mr_volume_ratio",
+      "roi_comp_pet_metabolic_density",
+      "roi_comp_pet_suvmax_to_mr_dim",
+      "roi_comp_pet_mr_volume_ratio_raw",
+      "roi_comp_pet_mr_zspan_ratio",
+      "roi_comp_pet_mr_maxarea_ratio",
+      "roi_comp_pet_mr_lesion_delta",
+      "roi_comp_pet_suvmean_to_mr_vol",
+      "pet_rad_original_shape_surfacevolumeratio",
+      "pet_rad_original_shape_leastaxislength",
+      "pet_rad_original_shape_minoraxislength",
+      "pet_rad_original_shape_maximum2ddiameterslice",
+      "pet_rad_original_shape_elongation",
+      "pet_rad_original_shape_maximum2ddiameterrow"
+    ],
+    "selected_pet_shape_features": [
+      "pet_rad_original_shape_surfacevolumeratio",
+      "pet_rad_original_shape_leastaxislength",
+      "pet_rad_original_shape_minoraxislength",
+      "pet_rad_original_shape_maximum2ddiameterslice",
+      "pet_rad_original_shape_elongation",
+      "pet_rad_original_shape_maximum2ddiameterrow"
+    ]
+  },
+  "treatment_map": {
+    "keep_order": [
+      "Standard",
+      "De-escalation"
+    ],
+    "map": {
+      "Standard": 0,
+      "De-escalation": 1
+    }
+  },
+  "limitations": [
+    "No retraining is included.",
+    "Concrete regimen labels are not direct outputs; only Standard and De-escalation are model heads.",
+    "Package predictions depend on the frozen saved preprocessor and feature definitions."
+  ]
+}

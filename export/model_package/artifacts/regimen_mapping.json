@@ -1,0 +1,9 @@
+{
+  "model_outputs": [
+    "Standard",
+    "De-escalation"
+  ],
+  "concrete_regimen_outputs_supported": false,
+  "known_concrete_regimen_aliases": {},
+  "migration_note": "Keep concrete regimen standardization outside this frozen package unless a clinically reviewed mapping to Standard/De-escalation is supplied."
+}
