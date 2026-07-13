@@ -2,6 +2,14 @@
 
 De-NATRM is the official code repository accompanying the manuscript on deep causal treatment recommendation for HER2-positive breast cancer neoadjuvant therapy. The repository provides the main training pipeline, the frozen final model package, and the release-facing validation materials intended for manuscript-linked review and reuse.
 
+## Release Snapshot
+
+- Status: official manuscript-linked code release
+- Version: `v1.0.0`
+- License: `MIT`
+- Primary entry: `run.py`
+- Frozen package: `export/model_package/`
+
 This public repository is intentionally limited to the De-NATRM main model release surface. It does not distribute the broader private research workspace, including exploratory experiment history, protected clinical spreadsheets, figure-production workspaces, or auxiliary analysis utilities.
 
 ## Repository Scope
@@ -86,6 +94,7 @@ python export/model_package/scripts/predict_package.py \
 - [Maintainer release checklist](docs/github-release/release_checklist.md)
 - [Model asset audit](docs/model_asset_audit.md)
 - [Final model package README](export/model_package/README.md)
+- [Chinese README](README.zh-CN.md)
 
 ## Citation
 
