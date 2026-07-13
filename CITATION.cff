@@ -5,6 +5,8 @@ type: software
 version: "1.0.0"
 date-released: 2026-07-12
 license: MIT
+url: "https://github.com/HorwardLee/De-NATRM"
+repository-code: "https://github.com/HorwardLee/De-NATRM"
 authors:
   - family-names: Robbins
 abstract: "De-NATRM is the official manuscript-linked code release for individualized pCR prediction and treatment recommendation under multiple HER2-positive breast cancer neoadjuvant therapy options."
