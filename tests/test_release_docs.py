@@ -96,3 +96,14 @@ def test_config_uses_public_repo_placeholder_paths():
     assert "de_natrm_run" in text
     assert "rollback_to_" not in text
     assert "de_natrm_public_release_snapshot_20260316" in text
+
+
+def test_public_repo_omits_confidence_branch_variants():
+    config_text = (ROOT / "config.py").read_text(encoding="utf-8")
+    data_text = (ROOT / "data.py").read_text(encoding="utf-8")
+    docs_text = (ROOT / "docs" / "core_code_map.md").read_text(encoding="utf-8")
+
+    assert 'IMAGE_RISK_BRANCH_FEATURE_MODE = "raw"' in config_text
+    assert "仅保留原始 image risk score 分支模式" in config_text
+    assert "_img_risk" in data_text
+    assert "interval estimation" in docs_text

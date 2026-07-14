@@ -1368,11 +1368,10 @@ def _attach_image_risk_score_features(
     branch_feature_cols: List[str] = []
     missing_flag_cols: List[str] = []
     modality_scores: List[np.ndarray] = []
-    branch_mode = str(IMAGE_RISK_BRANCH_FEATURE_MODE or "raw_conf").strip().lower()
+    branch_mode = str(IMAGE_RISK_BRANCH_FEATURE_MODE or "raw").strip().lower()
     score_mode = str(IMAGE_RISK_SCORE_MODE or "global").strip().lower()
-    valid_branch_modes = {"raw", "raw_conf", "raw_conf_logit", "raw_center_conf_logit"}
-    if branch_mode not in valid_branch_modes:
-        branch_mode = "raw_conf"
+    if branch_mode != "raw":
+        branch_mode = "raw"
     if score_mode not in {"global", "treatment_aware"}:
         score_mode = "global"
 
@@ -1423,19 +1422,6 @@ def _attach_image_risk_score_features(
                 modality_scores.append(score_all.astype(np.float32))
 
                 branch_feature_cols.append(risk_col)
-                if branch_mode in {"raw_conf", "raw_conf_logit", "raw_center_conf_logit"}:
-                    conf_col = f"{modality}_img_conf_{token}"
-                    X[conf_col] = np.abs(score_all - prevalence).astype(np.float32)
-                    branch_feature_cols.append(conf_col)
-                if branch_mode == "raw_center_conf_logit":
-                    center_col = f"{modality}_img_center_{token}"
-                    X[center_col] = (score_all - prevalence).astype(np.float32)
-                    branch_feature_cols.append(center_col)
-                if branch_mode in {"raw_conf_logit", "raw_center_conf_logit"}:
-                    clipped = np.clip(score_all, 1e-4, 1.0 - 1e-4)
-                    logit_col = f"{modality}_img_logit_{token}"
-                    X[logit_col] = np.log(clipped / (1.0 - clipped)).astype(np.float32)
-                    branch_feature_cols.append(logit_col)
 
                 print(
                     f"[INFO] 已生成 {modality.upper()} treatment-aware image score[{treatment_name}]: "
@@ -1463,19 +1449,6 @@ def _attach_image_risk_score_features(
             modality_scores.append(score_all.astype(np.float32))
 
             branch_feature_cols.append(risk_col)
-            if branch_mode in {"raw_conf", "raw_conf_logit", "raw_center_conf_logit"}:
-                conf_col = f"{modality}_img_conf"
-                X[conf_col] = np.abs(score_all - prevalence).astype(np.float32)
-                branch_feature_cols.append(conf_col)
-            if branch_mode == "raw_center_conf_logit":
-                center_col = f"{modality}_img_center"
-                X[center_col] = (score_all - prevalence).astype(np.float32)
-                branch_feature_cols.append(center_col)
-            if branch_mode in {"raw_conf_logit", "raw_center_conf_logit"}:
-                clipped = np.clip(score_all, 1e-4, 1.0 - 1e-4)
-                logit_col = f"{modality}_img_logit"
-                X[logit_col] = np.log(clipped / (1.0 - clipped)).astype(np.float32)
-                branch_feature_cols.append(logit_col)
 
             print(
                 f"[INFO] 已生成 {modality.upper()} image risk score: "

@@ -112,12 +112,8 @@ IMAGE_RISK_MLP_ALPHA = 1e-2
 IMAGE_RISK_MLP_MAX_ITER = 1000
 # 是否将 image risk score 相关特征从主干表格中拆出，走独立 image branch
 IMAGE_RISK_USE_SEPARATE_BRANCH = False
-# image risk branch 特征模式:
-# - "raw": 仅使用原始风险分数
-# - "raw_conf": 原始分数 + 置信度(abs(score-prevalence))
-# - "raw_conf_logit": 原始分数 + 置信度 + logit(score)
-# - "raw_center_conf_logit": 原始分数 + 中心化分数 + 置信度 + logit(score)
-IMAGE_RISK_BRANCH_FEATURE_MODE = "raw_conf"
+# 公开仓库当前仅保留原始 image risk score 分支模式。
+IMAGE_RISK_BRANCH_FEATURE_MODE = "raw"
 # 兼容旧逻辑：保留 USE_PET_FEATURES 名称，实际复用统一 image embedding 开关
 USE_PET_FEATURES = USE_IMAGE_EMBEDDINGS
 

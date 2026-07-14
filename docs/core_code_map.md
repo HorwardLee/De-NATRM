@@ -96,7 +96,7 @@ This is the default end-to-end entrypoint for De-NATRM.
 
 - Evaluation metrics
 - ROC/PR/calibration plotting
-- Optional bootstrap AUROC confidence intervals
+- Optional bootstrap AUROC interval estimation
 
 ### `predictor.py`
 
