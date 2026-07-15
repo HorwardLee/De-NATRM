@@ -60,6 +60,9 @@ def test_citation_file_uses_de_natrm_identity():
 def test_public_release_metadata_uses_professional_lineage_labels():
     final_id = (ROOT / "export" / "model_package" / "FINAL_MODEL_ID.json").read_text(encoding="utf-8")
     manifest = (ROOT / "export" / "model_package" / "manifest.json").read_text(encoding="utf-8")
+    package_summary = (
+        ROOT / "export" / "model_package" / "artifacts" / "experiment_results_summary.csv"
+    ).read_text(encoding="utf-8-sig")
 
     assert "source_release_lineage" in final_id
     assert "source_code_snapshot" in final_id
@@ -67,6 +70,9 @@ def test_public_release_metadata_uses_professional_lineage_labels():
     assert "rollback_to_" not in final_id
     assert "source_release_lineage" in manifest
     assert "source_experiment_dir" not in manifest
+    assert "rollback_to_" not in package_summary
+    assert "HER2阳性-V3.0(2)" not in package_summary
+    assert "authorized_dataset.xlsx" in package_summary
 
 
 def test_config_respects_public_env_overrides(monkeypatch):

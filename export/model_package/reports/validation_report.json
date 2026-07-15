@@ -46,8 +46,8 @@
       "ok": true
     },
     "artifacts/experiment_results_summary.csv": {
-      "expected": "71edd02d39d5278aa95f94c5d261908132712a1f3a88c4ba2a829fd115a7d60b",
-      "actual": "71edd02d39d5278aa95f94c5d261908132712a1f3a88c4ba2a829fd115a7d60b",
+      "expected": "37391b2367b5614f8864df297db157c4be9527e41199668e99e7354de2e52c00",
+      "actual": "37391b2367b5614f8864df297db157c4be9527e41199668e99e7354de2e52c00",
       "ok": true
     },
     "artifacts/test_per_treatment_probs_detailed.csv": {
