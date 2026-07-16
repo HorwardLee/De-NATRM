@@ -44,6 +44,7 @@ def test_readmes_are_release_facing_and_portable():
 
 def test_requirements_cover_core_release_stack():
     text = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+    assert "Python 3.10+" in text
     for package in ["numpy", "pandas", "scikit-learn", "torch", "openpyxl", "joblib", "pytest"]:
         assert package in text
 
